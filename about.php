@@ -11,6 +11,7 @@
 	
 	<!-- Scripts -->
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
+	<SCRIPT TYPE="text/javascript" src='js/smoothy.js'></SCRIPT>
 	<!--[if IE 6]>
 	<script src="js/DD_belatedPNG_0.0.8a-min.js"></script>
 	<script>
@@ -25,13 +26,13 @@
 	
 </head>
 
-<body>
+<body onload="fadein(document.getElementById('content'))" onunload="fadein(document.getElementById('content'))">
 
 	<div id="wrapper" class="container_12 clearfix">
 
 		<?php include('header.php') ?>
 		
-		<div id='content'>	
+		<div id='content' style='opacity:0'>	
 		<!-- Caption Line -->
 		<h2 class="grid_12 caption">Learn <span>about me</span> and what I do best.</h2>
 		

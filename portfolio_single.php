@@ -29,6 +29,7 @@ require_once('lib/database.php');
 			});
 		});
 		</script>  
+	<SCRIPT TYPE="text/javascript" src='js/smoothy.js'></SCRIPT>
 	<!--[if IE 6]>
 	<script src="js/DD_belatedPNG_0.0.8a-min.js"></script>
 	<script>
@@ -42,12 +43,13 @@ require_once('lib/database.php');
 	<![endif]-->
 </head>
 
-<body>
-	
+<body onload="fadein(document.getElementById('content'))" onunload="fadein(document.getElementById('content'))">
+
 	<div id="wrapper" class="container_12 clearfix">
 		<?php  
 			include('header.php');
 		
+		echo "<div id='content' style='opacity:0'>";
 		if(isset($id)) {
 		$id = mysqli_real_escape_string($mysqli, $id);
 			$query = "SELECT * FROM project WHERE project_id='" . $id ."'";
@@ -126,7 +128,7 @@ require_once('lib/database.php');
 		?>
 		
 		
-		
+		</div>
 		
 		<!-- Footer -->
 		<p class="grid_12 footer clearfix">

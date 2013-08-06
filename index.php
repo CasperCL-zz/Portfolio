@@ -26,6 +26,7 @@ require_once('lib/database.php');
 			});
 		});
 		</script>  
+	<script type="text/javascript"  src="js/smoothy.js"></script>
 
 	<!--[if IE 6]>
 	<script src="js/DD_belatedPNG_0.0.8a-min.js"></script>
@@ -39,11 +40,12 @@ require_once('lib/database.php');
 	</script>
 	<![endif]-->
 </head>
-<body>
+
+<body onload="fadein(document.getElementById('content'))">
 	<div id="wrapper" class="container_12 clearfix">
 		<?php include('header.php') ?>
 		
-		<div id='content'>
+		<div id='content' style='opacity:0'>
 		<!-- Featured Image Slider -->
 		<div id="featured" class="clearfix grid_12">
 			<ul> 
