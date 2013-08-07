@@ -87,9 +87,9 @@ require_once('lib/database.php');
 			<!-- Column 2 / Image Carosuel -->
 			<div id='folio_scroller_container' class='grid_8 cleafix'>
 			<ul id='folio_scroller'> 
-			<li><a href='images/600x300/" . $image . "_1.png'><img alt='' src='images/600x300/" . $image . "_1.png' /></a></li> 
-			<li><a href='images/600x300/" . $image . ".png'><img  alt='' src='images/600x300/" . $image . ".png' /></a></li> 
-			<li><a href='images/600x300/" . $image . "_2.png'><img alt='' src='images/600x300/" . $image . "_2.png' /></a></li> 
+			<li><img alt='' src='images/600x300/" . $image . "_1.png' /></li> 
+			<li><img  alt='' src='images/600x300/" . $image . ".png' /></li> 
+			<li><img alt='' src='images/600x300/" . $image . "_2.png' /></li> 
 			</ul> 
 			";
 			if(!empty($description2)) 
