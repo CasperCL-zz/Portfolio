@@ -47,7 +47,7 @@
 			<h4 class="page_title">Algemeen en interesses</h4>
 			<div class="hr dotted clearfix">&nbsp;</div>
 			<p>Ik ben op 11 juli 1994 in Zaandam geboren. Ik heb twee oudere broers, allebei uitwonend. Mijn hobby’s zijn mountainbiken, wielrennen, gamen èn programmeren. De eerste twee hobby’s doe ik wanneer ik vrije tijd heb en vaak ook in vakanties. 
-				De laatste hobby is sinds kort een nieuwe hobby en dat heb ik te danken aan mijn nieuwe studie: Technische Informatica. Ik ben, na mijn HAVO diploma in 2011 gehaald te hebben, begonnen aan deze studie. Ik heb mij altijd geïnteresseerd in de werking van technische voorwerpen maar ook in de werking van software. Na lang twijfelen tussen de studies waarin ik geïnteresseerd was ( elektrotechniek, Bouwkunde en Informatica) heb ik mij ingeschreven voor Informatica aan de Hogeschool van Amsterdam. Het eerste semester viel mij zwaar; ik snapte de logica niet achter het programmeren, had moeite met het tempo van de opleiding en ik was gewend aan de voorgekauwde planningen van de middelbare school. Ik ben van nature een harde werker en heb mij terug geknokt, met als resultaat dat ik nu <b>ontzettend goed ben in programmeren</b> en veel zelfstandiger ben.</p> 
+				De laatste hobby is sinds kort een nieuwe hobby en dat heb ik te danken aan mijn nieuwe studie: Technische Informatica. Ik ben, na mijn HAVO diploma in 2011 gehaald te hebben, begonnen aan deze studie. Ik heb mij altijd geïnteresseerd in de werking van technische voorwerpen maar ook in de werking van software. Na lang twijfelen tussen de studies waarin ik geïnteresseerd was ( elektrotechniek, Bouwkunde en Informatica) heb ik mij ingeschreven voor Informatica aan de Hogeschool van Amsterdam. Het eerste semester viel mij zwaar; ik snapte de logica niet achter het programmeren, had moeite met het tempo van de opleiding en ik was gewend aan de voorgekauwde planningen van de Voortgezet Onderwijs. Ik ben van nature een harde werker en heb mij terug geknokt, met als resultaat dat ik nu <b>ontzettend goed ben in programmeren</b> en veel zelfstandiger ben.</p> 
 			<h4 class="page_title">Ambities</h4>
 			<div class="hr dotted clearfix">&nbsp;</div>
 			<p>Momenteel studeer ik en daar stop ik al mijn tijd en energie in om zo een goede toekomst tegemoet te zien. Ik wil de studie Technische Informatica in vier jaar afronden en daarna het liefst aan het werk bij een hardware bedrijf zoals IBM, AMD of Microsoft. Mocht dat niet lukken, dan wil ik ook graag bij wat kleinere bedrijven werken. Tijdens mijn studie aan de Hogeschool van Amsterdam wil ik vanaf het 3e jaar bedrijfservaring op doen. Ik hoop dan over genoeg kennis te bezitten om, naast de projecten georganiseerd door de HvA, in een bedrijf goed werk te kunnen leveren. </p> 
@@ -59,7 +59,14 @@
 		
 		<!-- Column 2 / Sidebar -->
 		<div class="grid_4">
+			<img class='image-smooth-border' src='images/profile.JPG' width='250px' heigth='250px' style='margin-bottom: 10px'/><br/>
+			<a href='https://github.com/CasperCL' target="_blank"><img src='images/github.png'/></a>
+			<a href='https://linkedin.com/in/caspereekhof' target="_blank"><img src='images/linkedin.png'/></a>
+			<a href='https://plus.google.com/105349291659164827642/' target="_blank"><img src='images/googlePlus.png'/></a>
+		</div>
+		<div class="grid_4">
 		
+			<div class="hr dotted clearfix">&nbsp;</div>
 			<h4>My History</h4>
 			<div class="hr dotted clearfix">&nbsp;</div>
 			<dl class="history"> 
@@ -67,12 +74,14 @@
 				<dd>Geboren</dd> 
 			
 				<dt>2007</dt> 
-				<dd>De middelbare school niveau: HAVO. Ik koos hier de technische richting met veel natuurkunde, biologie en scheikunde.</dd> 
+				<dd>De Voortgezet Onderwijs niveau: HAVO. Ik koos hier de technische richting met veel natuurkunde, biologie en scheikunde.</dd> 
 			
 				<dt>2012</dt> 
-				<dd>Het begin van mijn opleiding Technische Informatica aan de Hogeschool van Amsterdam.</dd> 
+				<dd><img class="normal-image" src="/images/hva_logo.png" width="24px" heigth="24px"/>   Het begin van mijn opleiding Technische Informatica aan de Hogeschool van Amsterdam.</dd> 
 				<dt>2012</dt> 
 				<dd>Propedeutische Cum Laude</dd>
+				<dt>2013</dt> 
+				<dd><img class="normal-image" src="/images/labela.png" width="24px" heigth="17px"/>  Stage bij het software ontwikkelingsbedrijf <a href='http://www.labela.nl/' target="_blank">LabelA</a></dd>
 			
 			</dl>
 		</div>

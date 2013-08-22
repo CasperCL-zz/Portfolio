@@ -1,7 +1,7 @@
 <?php
     //we need to get our variables first
     
- include('lib/config.php');  
+ include('config.php');  
     
     $name     =   $_POST['name'];  
     $from     =   $_POST['email'];

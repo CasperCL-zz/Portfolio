@@ -41,7 +41,6 @@
 
 			<!-- Column 1 / Content -->
 			<div class="grid_8">
-				<p>Heeft u interesse in mijn werk of in mij als werknemer? Neem dan hieronder contact met mij op.</p>
 				<!-- Contact Form -->
 				<form action='/' method='post' id='contact_form'>
 						<h3>Contact Form</h3>
@@ -83,6 +82,7 @@
 				</form>  
 			</div>
 			
+			<!-- <img src='/images/contact.png' style='margin-left: auto;margin-right: auto;'/> -->
 			<!-- Column 2 / Sidebar -->
 			<div class="grid_4 contact">
 			

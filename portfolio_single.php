@@ -79,7 +79,11 @@ require_once('lib/database.php');
 			";
 			if(!empty($site))
 			echo "
-			<a href='#' class='button float right'>Visit Site</a>";
+			<a href='$site' target='_blank' class='button float right'>Visit Site</a>";
+			else
+			if(!empty($github_link))
+			echo "
+			<a href='$github_link' target='_blank' class='button float right'>View Source</a>";
 			echo "
 			</p>
 			</div>
@@ -87,8 +91,8 @@ require_once('lib/database.php');
 			<!-- Column 2 / Image Carosuel -->
 			<div id='folio_scroller_container' class='grid_8 cleafix'>
 			<ul id='folio_scroller'> 
+			<li><img alt='' src='images/600x300/" . $image . ".png' /></li> 
 			<li><img alt='' src='images/600x300/" . $image . "_1.png' /></li> 
-			<li><img  alt='' src='images/600x300/" . $image . ".png' /></li> 
 			<li><img alt='' src='images/600x300/" . $image . "_2.png' /></li> 
 			</ul> 
 			";

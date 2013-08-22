@@ -1,0 +1,16 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML><HEAD>
+<TITLE>404 Not Found</TITLE>
+
+	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="css/reset.css" />
+	<link rel="stylesheet" href="css/styles.css" />
+</HEAD>
+<BODY>
+	<div align='center' style='width: 15%; margin-left: auto; margin-right: auto ;margin-top: 40px;'>
+		<H1 style='font-size: 40px'>Whoops!</H1>
+		Looks like one of those 404's :(
+	</div>
+</BODY>
+</HTML>

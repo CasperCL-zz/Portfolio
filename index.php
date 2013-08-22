@@ -16,13 +16,20 @@ require_once('lib/database.php');
 	
 	<!-- Scripts -->
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
-	<script type="text/javascript" src="js/jquery.roundabout-1.0.min.js"></script> 
+	<script type="text/javascript" src="js/jquery.roundabout-2.4.2.min.js"></script> 
+	<script type="text/javascript" src="js/jquery.event.drag-2.0.js"></script> 
+	<script type="text/javascript" src="js/jquery.event.drop-2.0.js"></script> 
 	<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
 	<script type="text/javascript">		
 		$(document).ready(function() { //Start up our Featured Project Carosuel
 			$('#featured ul').roundabout({
 				easing: 'easeOutInCirc',
-				duration: 400
+				duration: 400,
+				reflect: true,
+				enableDrag: true,
+				autoplay: true,
+         		autoplayDuration: 4000,
+         		autoplayPauseOnHover: true
 			});
 		});
 		</script>  
@@ -48,9 +55,9 @@ require_once('lib/database.php');
 		<div id='content' style='opacity:0'>
 		<!-- Featured Image Slider -->
 		<div id="featured" class="clearfix grid_12">
-			<ul> 
+			<ul class="roundabout-holder"> 
 				<?php 
-				$query = "SELECT * FROM project";
+				$query = "SELECT * FROM project ORDER BY project_id DESC";
 				if($result = $mysqli->query($query))
 				{
 					/* fetch associative array */
@@ -61,7 +68,7 @@ require_once('lib/database.php');
 
 						// Project skeleton
 						echo "
-							<li>
+							<li class='roundabout-moveable-item'>
 							<a href='portfolio_single?id=". $id . "'>
 							<span>" . $pName . "</span>
 							<img src='images/600x300/" . $image . ".png' alt='' />
