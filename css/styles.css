@@ -1,13 +1,26 @@
-/*header {
-	position:fixed;
-	display: block;
-	background:url(../images/bg_notop.png);
+header {
+	position: fixed;
+	width: 100%;
 	height: 100px;
+	z-index: 100;
+	opacity: 0.9;
+	left: 14.6%;
 }
-#content {
 
-    padding-top: 120px	
-}*/
+#header {
+	position: fixed;
+	width: 100%;
+	height: 100px;
+	left: 0;
+	z-index: 100;
+	opacity: 0.9;
+	background-image: url('../images/header-bg.png');
+}
+#black-bar {
+	height: 7px;
+	margin-top: -7px;
+	background-image: url('../images/black-bar.png');
+}
 
 /************************************
 AURELIUS
@@ -53,7 +66,7 @@ DESCRIPTION: A premium business and portfolio theme.
 	address,
 	fieldset,
 	img									{margin-bottom:20px;}
-	#wrapper							{margin-top:7px;}
+	#wrapper							{margin-top:7px; }
 	ul li ul,
 	ol li ol							{margin-bottom:0px;}
 	ol									{padding: 0 0 0 5px;}
@@ -258,3 +271,6 @@ DESCRIPTION: A premium business and portfolio theme.
 	margin: 0;
 }
 .image-smooth-border 			{font-size:12px!important; padding:5px; border:1px solid #aaaaaa; -webkit-border-radius:5px; -moz-border-radius:5px; background:#f9f9f9;}
+#content {
+	padding-top: 120px;
+}
