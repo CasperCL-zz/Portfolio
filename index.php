@@ -1,5 +1,5 @@
 <?php 
-require_once('lib/database.php');
+	require_once('lib/database.php');
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
@@ -15,13 +15,13 @@ require_once('lib/database.php');
 	<link rel="stylesheet" href="css/styles.css" />
 	
 	<!-- Scripts -->
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script type="text/javascript" src="js/jquery.roundabout-2.4.2.min.js"></script> 
 	<script type="text/javascript" src="js/jquery.event.drag-2.0.js"></script> 
 	<script type="text/javascript" src="js/jquery.event.drop-2.0.js"></script> 
 	<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
 	<script type="text/javascript">		
-		$(document).ready(function() { //Start up our Featured Project Carosuel
+		$(function() { //Start up our Featured Project Carosuel
 			$('#featured ul').roundabout({
 				easing: 'easeOutInCirc',
 				duration: 400,
@@ -31,9 +31,10 @@ require_once('lib/database.php');
          		autoplayDuration: 4000,
          		autoplayPauseOnHover: true
 			});
+		      $("#content").hide();
+		      $("#content").fadeIn(1000);
 		});
-		</script>  
-	<script type="text/javascript"  src="js/smoothy.js"></script>
+	</script>  
 
 	<!--[if IE 6]>
 	<script src="js/DD_belatedPNG_0.0.8a-min.js"></script>
@@ -48,16 +49,16 @@ require_once('lib/database.php');
 	<![endif]-->
 </head>
 
-<body onload="fadein(document.getElementById('content'))">
+<body>
 	<div id="wrapper" class="container_12 clearfix">
 		<?php include('header.php') ?>
 		
-		<div id='content' style='opacity:0'>
+		<div id='content'>
 		<!-- Featured Image Slider -->
 		<div id="featured" class="clearfix grid_12">
 			<ul class="roundabout-holder"> 
 				<?php 
-				$query = "SELECT * FROM project ORDER BY project_id DESC";
+				$query = "SELECT * FROM project ORDER BY project_id DESC LIMIT 5";
 				if($result = $mysqli->query($query))
 				{
 					/* fetch associative array */

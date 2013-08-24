@@ -1,7 +1,8 @@
 <?php
 if(isset($_GET['id']))
-	$id = $_GET['id'];
-require_once('lib/database.php');
+	require_once('lib/database.php');
+	if(!empty($_GET['id']))
+		$id = $mysqli->real_escape_string($_GET['id']);
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
@@ -21,14 +22,18 @@ require_once('lib/database.php');
 	<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
 	<script type="text/javascript" src="js/jquery.roundabout-shapes-1.1.js"></script>
 	<script type="text/javascript">			
-		$(document).ready(function() { //Start up our Project Preview Carosuel
-			$('ul#folio_scroller').roundabout({
-				easing: 'easeOutInCirc',
-				shape: 'waterWheel',
-				duration: 600
-			});
-		});
-		</script>  
+		   $(function() {
+		      $('#folio_scroller').roundabout({
+		         shape: 'waterWheel',
+				autoplay: true,
+         		autoplayDuration: 4000,
+         		autoplayPauseOnHover: true
+		      });
+		      $("#content").hide();
+		      $("#content").fadeIn(1000);
+
+		   });
+	</script>
 	<SCRIPT TYPE="text/javascript" src='js/smoothy.js'></SCRIPT>
 	<!--[if IE 6]>
 	<script src="js/DD_belatedPNG_0.0.8a-min.js"></script>
@@ -43,13 +48,13 @@ require_once('lib/database.php');
 	<![endif]-->
 </head>
 
-<body onload="fadein(document.getElementById('content'))" onunload="fadein(document.getElementById('content'))">
+<body>
 
 	<div id="wrapper" class="container_12 clearfix">
 		<?php  
 			include('header.php');
 		
-		echo "<div id='content' style='opacity:0'>";
+		echo "<div id='content'";
 		if(isset($id)) {
 		$id = mysqli_real_escape_string($mysqli, $id);
 			$query = "SELECT * FROM project WHERE project_id='" . $id ."'";
@@ -63,6 +68,8 @@ require_once('lib/database.php');
 				$site = $row['site'];
 				$image = $row['image_600x300'];
 				$github_link = $row['github_link'];
+				$appstore_link = $row['appstore_link'];
+				$googleplay_link = $row['googleplay_link'];
 				
 				echo "
 			<!-- Catch Line and Link -->
@@ -84,6 +91,14 @@ require_once('lib/database.php');
 			if(!empty($github_link))
 			echo "
 			<a href='$github_link' target='_blank' class='button float right'>View Source</a>";
+			else
+			if(!empty($appstore_link))
+			echo "
+			<a href='$appstore_link' target='_blank' class='button float right'>View in Appstore</a>";
+			else
+			if(!empty($googleplay_link))
+			echo "
+			<a href='$googleplay_link' target='_blank' class='button float right'>View in Google Play</a>";
 			echo "
 			</p>
 			</div>
