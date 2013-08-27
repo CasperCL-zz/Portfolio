@@ -1,11 +1,12 @@
 <?php
+	include 'config.php';
 	require_once('lib/database.php');
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<title>Casper Eekhof | Portfolio >> Projects</title>
+	<title><?php echo $full_name; ?> | Portfolio</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	
 	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
@@ -14,7 +15,12 @@
 	<link rel="stylesheet" href="css/styles.css" />
 	
 	<!-- Scripts -->
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<!-- Add fancyBox main JS and CSS files -->
+	<script type="text/javascript" src="/js/fancybox/jquery.fancybox.js?v=2.1.5"></script>
+	<link rel="stylesheet" type="text/css" href="/js/fancybox/jquery.fancybox.css?v=2.1.5" media="screen" />
+
+	<script type="text/javascript" src='/js/fancybox/helpers/onload.js'></script>
 
 	<script type="text/javascript">
 		$(function(){
@@ -71,10 +77,10 @@
 							while ($row = $result->fetch_assoc()) {
 								$id = $row['project_id'];
 								$pName = $row['name'];
-								$image = $row['image_600x300'];
+								$image = $row['image'];
 								echo "<a class=\"portfolio_item float alpha\" href=\"portfolio_single?id=$id\">
 										<span>$pName</span>
-										<img class=\"\" src=\"images/600x300/$image.png\"  alt=\"\" height='112' width='223'/>
+										<img class=\"\" src=\"images/projects/223x112/$image/$image.png\"  alt=\"\"  />
 									</a>";
 							}
 						}
@@ -101,10 +107,10 @@
 							while ($row = $result->fetch_assoc()) {
 								$id = $row['project_id'];
 								$pName = $row['name'];
-								$image = $row['image_600x300'];
+								$image = $row['image'];
 								echo "<a class=\"portfolio_item float alpha\" href=\"portfolio_single?id=$id\">
 										<span>$pName</span>
-										<img class=\"\" src=\"images/600x300/$image.png\"  alt=\"\" height='112' width='223'/>
+										<img class=\"\" src=\"images/projects/223x112/$image/$image.png\"  alt=\"\" />
 									</a>";
 							}
 						}
@@ -132,10 +138,10 @@
 							while ($row = $result->fetch_assoc()) {
 								$id = $row['project_id'];
 								$pName = $row['name'];
-								$image = $row['image_600x300'];
+								$image = $row['image'];
 								echo "<a class=\"portfolio_item float alpha\" href=\"portfolio_single?id=$id\">
 										<span>$pName</span>
-										<img class=\"\" src=\"images/600x300/$image.png\"  alt=\"\" height='112' width='223'/>
+										<img class=\"\" src=\"images/projects/223x112/$image/$image.png\"  alt=\"\" />
 									</a>";
 							}
 						}
@@ -162,10 +168,10 @@
 						while ($row = $result->fetch_assoc()) {
 							$id = $row['project_id'];
 							$pName = $row['name'];
-							$image = $row['image_600x300'];
+								$image = $row['image'];
 							echo "<a class=\"portfolio_item float alpha\" href=\"portfolio_single?id=$id\">
 									<span>$pName</span>
-									<img class=\"\" src=\"images/600x300/$image.png\"  alt=\"\" height='112' width='223'/>
+									<img class=\"\" src=\"images/projects/223x112/$image/$image.png\"  alt=\"\" />
 								</a>";
 						}
 					}
@@ -190,13 +196,15 @@
 
 					<?php
 
-					$di = new RecursiveDirectoryIterator('images/certificates/');
+					$di = new RecursiveDirectoryIterator('images/certificates/thumbs');
 					foreach (new RecursiveIteratorIterator($di) as $filename => $file) {
-						if(endsWith($file, ".png"))
-						echo "<a class=\"portfolio_item float alpha\">
-					 				<span>" . basename($filename, '.png') . "</span>
-					 				<img class=\"\" src=\"$filename\"  alt=\"\" height='112' width='223'/>
-					 			</a>";
+						if(endsWith($file, ".png")) {
+							$fileNameClean = basename($filename, '.png');
+							echo "<a class=\"portfolio_item float alpha fancybox\" href='" . dirname(dirname($filename)) . '/' . basename($filename) . "' data-fancybox-group=\"gallery\" title='$fileNameClean'>
+						 				<span>" . $fileNameClean . "</span>
+						 				<img src=\"$filename\"  alt=\"\" />
+						 			</a>";
+					 		}
 					}
 
 					function endsWith($haystack, $needle)

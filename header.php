@@ -1,8 +1,12 @@
+<?php
+	include 'config.php';
+?>
+
 <div id='header'>
 	<div id='black-bar'></div>
 	<header>
 	<!-- Text Logo -->
-	<a href="/"><h1 id="logo" class="grid_4">Casper Eekhof</h1></a>
+	<a href="/"><h1 id="logo" class="grid_4"><?php echo $full_name; ?></h1></a>
 
 
 	<!-- Navigation Menu -->

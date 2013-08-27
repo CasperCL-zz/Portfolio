@@ -1,4 +1,5 @@
 <?php
+include 'config.php';
 if(isset($_GET['id']))
 	require_once('lib/database.php');
 	if(!empty($_GET['id']))
@@ -8,7 +9,7 @@ if(isset($_GET['id']))
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<title>Casper Eekhof | Portfolio >> Project</title>
+	<title><?php echo $full_name; ?> | Portfolio >> Project</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	
 	<!-- Stylesheets -->
@@ -17,10 +18,16 @@ if(isset($_GET['id']))
 	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
 	
 	<!-- Scripts -->
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script type="text/javascript" src="js/jquery.roundabout-1.0.min.js"></script> 
 	<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
 	<script type="text/javascript" src="js/jquery.roundabout-shapes-1.1.js"></script>
+
+	<!-- Fancy box -->
+	<script type="text/javascript" src="/js/fancybox/jquery.fancybox.js?v=2.1.5"></script>
+	<link rel="stylesheet" type="text/css" href="/js/fancybox/jquery.fancybox.css?v=2.1.5" media="screen" />
+
+	<script type="text/javascript" src='/js/fancybox/helpers/onload.js'></script>
 	<script type="text/javascript">			
 		   $(function() {
 		      $('#folio_scroller').roundabout({
@@ -66,7 +73,7 @@ if(isset($_GET['id']))
 				$description = $row['description'];
 				$description2 = $row['description_2'];
 				$site = $row['site'];
-				$image = $row['image_600x300'];
+				$image = $row['image'];
 				$github_link = $row['github_link'];
 				$appstore_link = $row['appstore_link'];
 				$googleplay_link = $row['googleplay_link'];
@@ -82,7 +89,7 @@ if(isset($_GET['id']))
 			<div class='hr dotted clearfix'>&nbsp;</div>
 			<p>" . $description . "</p>
 			<p class='clearfix'>
-			<!-- <a href='portfolio.php' class='button float'>&lt;&lt; Back to Portfolio</a> -->
+			<a href='portfolio.php' class='button float'>&lt;&lt; Back to Portfolio</a>
 			";
 			if(!empty($site))
 			echo "
@@ -94,21 +101,30 @@ if(isset($_GET['id']))
 			else
 			if(!empty($appstore_link))
 			echo "
-			<a href='$appstore_link' target='_blank' class='button float right'>View in Appstore</a>";
+			<a href='$appstore_link' target='_blank' class='button float right'>Appstore</a>";
 			else
 			if(!empty($googleplay_link))
 			echo "
-			<a href='$googleplay_link' target='_blank' class='button float right'>View in Google Play</a>";
+			<a href='$googleplay_link' target='_blank' class='button float right'>Google Play</a>";
 			echo "
 			</p>
 			</div>
 			
 			<!-- Column 2 / Image Carosuel -->
 			<div id='folio_scroller_container' class='grid_8 cleafix'>
-			<ul id='folio_scroller'> 
-			<li><img alt='' src='images/600x300/" . $image . ".png' /></li> 
-			<li><img alt='' src='images/600x300/" . $image . "_1.png' /></li> 
-			<li><img alt='' src='images/600x300/" . $image . "_2.png' /></li> 
+			<ul id='folio_scroller'> ";
+			$bigImage1 = "images/projects/1200x600/$image/" . $image . ".png";
+			$bigImage2 = "images/projects/1200x600/$image/" . $image . "_1.png";
+			$bigImage3 = "images/projects/1200x600/$image/" . $image . "_2.png";
+
+			$smallImage1 = "images/projects/600x300/$image/" . $image . ".png";
+			$smallImage2 = "images/projects/600x300/$image/" . $image . "_1.png";
+			$smallImage3 = "images/projects/600x300/$image/" . $image . "_2.png";
+
+			echo "
+				<li><a class=\"fancybox\" data-fancybox-group=\"gallery\" href='" . (file_exists($bigImage1) ? $bigImage1 : $smallImage1) . "'><img alt='' src='" . $smallImage1 . "' /></a></li> 
+				<li><a class=\"fancybox\" data-fancybox-group=\"gallery\" href='" . (file_exists($bigImage2) ? $bigImage2 : $smallImage2) . "'><img alt='' src='" . $smallImage2 . "' /></a></li> 
+				<li><a class=\"fancybox\" data-fancybox-group=\"gallery\" href='" . (file_exists($bigImage2) ? $bigImage3 : $smallImage3) . "'><img alt='' src='" . $smallImage3 . "' /></a></li> 
 			</ul> 
 			";
 			if(!empty($description2)) 

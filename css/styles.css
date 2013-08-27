@@ -21,6 +21,9 @@ header {
 	margin-top: -7px;
 	background-image: url('../images/black-bar.png');
 }
+.fancybox-custom .fancybox-skin {
+	box-shadow: 0 0 50px #222;
+}
 
 /************************************
 AURELIUS
@@ -241,6 +244,25 @@ DESCRIPTION: A premium business and portfolio theme.
 	#contact_form input#subject			{width:400px;}
 	#contact_form textarea				{width:500px;height:150px; resize: none;}
 	#contact_form input.button			{float:right;}
+
+
+	p.error								{margin-left:140px; margin-top:10px;}
+	#project_form ul					{float:left;}
+	#project_form ul li					{margin:10px 0; list-style:none; position:relative; clear:both;}
+	#project_form label					{line-height:35px; width:100px; text-align:right; float:left; margin-right:10px;}
+	#project_form input#name,
+	#project_form input#category,
+	#project_form input#site_link,
+	#project_form input#github_link,
+	#project_form input#appstore_link,
+	#project_form input#googleplay_link,
+	#project_form textarea				{float:left; padding:8px; border:1px solid #CCCCCC; margin-left:10px; background:#fcfcfc; -moz-border-radius:5px; -webkit-border-radius:5px;}
+	#project_form input#site_link,
+	#project_form input#github_link,
+	#project_form input#appstore_link,
+	#project_form input#googleplay_link	{width:400px;}
+	#project_form textarea				{width:500px;height:150px; resize: none;}
+	#project_form input.button			{float:right;}
 	
 /* Comment form */
 
@@ -274,3 +296,5 @@ DESCRIPTION: A premium business and portfolio theme.
 #content {
 	padding-top: 120px;
 }
+
+.well-input {padding:8px; border:1px solid #CCCCCC; margin-left:10px; background:#fcfcfc; -moz-border-radius:5px; -webkit-border-radius:5px;}

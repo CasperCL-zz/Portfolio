@@ -1,7 +1,10 @@
+<?php
+	include 'config.php';
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<title>Casper Eekhof Portfolio | Contact Me</title>
+	<title><?php echo $full_name;?> Portfolio | Contact Me</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	
 	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
@@ -91,11 +94,15 @@
 				<div class="hr dotted clearfix">&nbsp;</div>
 				<ul> 
 					<li> 
-						<strong>Casper Eekhof</strong><br />  
-						Zaandam, 1507 XS<br /> 
-						The Netherlands<br /><br /> 
+						<strong><?php echo $full_name;?></strong><br />  
+						<?php echo $city;?>, <?php echo $postalCode;?><br /> 
+						<?php echo $country;?><br /><br /> 
 					</li> 
-					<li>Email  - <a href="mailto:contact@wieiscasper.nl">contact@wieiscasper.nl</a></li>
+					<li>
+					<?php 
+						echo "Email  - <a href=\"mailto:$contact\">$contact";
+					?>
+					</a></li>
 				</ul> 
 				
 					 

@@ -1,4 +1,5 @@
 <?php 
+	include 'config.php';
 	require_once('lib/database.php');
 ?>
 
@@ -6,7 +7,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 
-	<title>Casper Eekhof Portfolio | Home</title>
+	<title><?php echo $full_name; ?> Portfolio | Home</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	
 	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
@@ -65,14 +66,14 @@
 					while ($row = $result->fetch_assoc()) {
 						$id = $row['project_id'];
 						$pName = $row['name'];
-						$image = $row['image_600x300'];
+						$image = $row['image'];
 
 						// Project skeleton
 						echo "
 							<li class='roundabout-moveable-item'>
 							<a href='portfolio_single?id=". $id . "'>
 							<span>" . $pName . "</span>
-							<img src='images/600x300/" . $image . ".png' alt='' />
+							<img src='/images/projects/600x300/$image/" . $image . ".png' alt='' />
 							</a>
 							</li>
 						";
