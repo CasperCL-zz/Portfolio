@@ -78,7 +78,7 @@
 						<p id='mail_success' class='success'>Bedankt! U hoort snel van mij!</p>
 						<p id='mail_fail' class='error'>Whoops! Er is iets fout gegaan. Probeer later opnieuw of <a href="mailto:contact@wieiscasper.nl">mail mij direct via contact@wieiscasper.nl</a></p>
 						<div id="button">
-						<input type='submit' id='send_message' class="button" value='Submit' />
+						<input type='submit' id='send_message' class="button" value='Verzenden' />
 						</div>
 						</li> 
 					</ul> 

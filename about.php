@@ -91,6 +91,8 @@
 				<dd>Propedeutische Cum Laude</dd>
 				<dt>2013</dt> 
 				<dd><img class="normal-image" src="/images/labela.png" width="24px" heigth="17px"/>  Stage bij het software ontwikkelingsbedrijf <a href='http://www.labela.nl/' target="_blank">LabelA</a></dd>
+				<dt>2014</dt> 
+				<dd>Minor Forensic Intelligence and Security aan de Hogeschool van Amsterdam</dd>
 			
 			</dl>
 		</div>
